@@ -26,8 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // String displayText = 'Name of color will be displayed here';
-
   final List<String> _colorname = [
     "RED",
     "BLUE",
@@ -64,40 +62,22 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
       ),
       backgroundColor: _colors[_index % _colors.length],
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(_colorname[_index % _colorname.length]),
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _index++;
-                });
-              },
-              child: const Text("click here to change color"))
-        ],
-      ),
-    );
-    /* body: Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'color description will appear here',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(_colorname[_index % _colorname.length]),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _index++;
+                  });
+                },
+                child: const Text("click here to change color"))
           ],
         ),
-      ),*/
-
-    /*floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ); */
+      ),
+    );
   }
 }
