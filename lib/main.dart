@@ -26,7 +26,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String displayText = 'Name of color will be displayed here';
+  // String displayText = 'Name of color will be displayed here';
+
+  final List<String> _colorname = [
+    "RED",
+    "BLUE",
+    "GREEN",
+    "YELLOW",
+    "ORANGE",
+    "PURPLE",
+    "INDIGO",
+    "TEAL",
+  ];
+
   final List<Color> _colors = [
     Colors.red,
     Colors.blue,
@@ -37,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.indigo,
     Colors.teal
   ];
-  // ignore: unused_field
   var _index = 0;
 
   @override
@@ -46,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  // ignore: dead_code,
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -58,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(displayText),
+          Text(_colorname[_index % _colorname.length]),
           ElevatedButton(
               onPressed: () {
                 setState(() {
