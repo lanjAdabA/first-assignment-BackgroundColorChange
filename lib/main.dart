@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.cyan),
-      home: const MyHomePage(title: 'change_Color_on_clicking_button'),
+      home: const MyHomePage(title: 'Color_of_the _rainbow'),
     );
   }
 }
@@ -27,25 +28,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<String> _colorname = [
-    "RED",
+    "VIOLET",
+    "INDIGO",
     "BLUE",
     "GREEN",
     "YELLOW",
     "ORANGE",
-    "PURPLE",
-    "INDIGO",
-    "TEAL",
+    "RED",
   ];
 
   final List<Color> _colors = [
-    Colors.red,
+    Colors.purple,
+    Colors.indigo,
     Colors.blue,
     Colors.green,
     Colors.yellow,
     Colors.orange,
-    Colors.purple,
-    Colors.indigo,
-    Colors.teal
+    Colors.red,
   ];
   var _index = 0;
 
